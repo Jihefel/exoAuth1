@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>QDB PROD</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  
+  <link href={% static 'blog/css/style.css' %} rel="stylesheet">
+  <script src="https://kit.fontawesome.com/508b7484b8.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+{% include "components/navbar.html" %}
+  {% block content %}
+  {% endblock content %}
+
+</body>
+
+</html>
