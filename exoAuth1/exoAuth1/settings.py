@@ -17,6 +17,16 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_PORT = 2525
+EMAIL_HOST_USER = '50182366ec7759'
+EMAIL_HOST_PASSWORD = '17edc1c785a25d'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -50,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'exoAuth1.admin_access_middleware.AdminAccessMiddleware',
 ]
 
 ROOT_URLCONF = 'exoAuth1.urls'

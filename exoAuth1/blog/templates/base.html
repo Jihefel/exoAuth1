@@ -19,7 +19,16 @@
 </head>
 
 <body>
-{% include "components/navbar.html" %}
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% include "blog/components/navbar.html" %}
   {% block content %}
   {% endblock content %}
 

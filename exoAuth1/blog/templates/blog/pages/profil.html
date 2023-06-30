@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Your profile</h1>
+        <dl class="list-group list-group-flush">
+            <div class="list-group-item">
+                <dt>Username</dt>
+                <dd>{{user.username}}</dd>
+            </div>
+            <div class="list-group-item">
+                <dt>Full name</dt>
+                <dd>{{user.first_name}} {{user.last_name}}</dd>
+            </div>
+            <div class="list-group-item">
+                <dt>Email</dt>
+                <dd>{{user.email}}</dd>
+            </div>
+            <div class="list-group-item">
+                <dt>Password</dt>
+                <dd><a href="{% url 'change_password' %}">Change password</a></dd>
+            </div>
+            <div class="list-group-item">
+                <dt>Member since</dt>
+                <dd>{{user.date_joined}}</dd>
+            </div>
+        </dl>
+    </div>
+{% endblock content %}
